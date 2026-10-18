@@ -31,7 +31,11 @@ Knowledge workers, researchers, and students frequently suffer from "tab overloa
 * **Skeema (CMU Research Extension):** A browser extension utilizing machine learning to help users group open tabs into tasks
 >  *Limitation:* Focused primarily on task-centric groupings without a multi-agent negotiation framework or customizable agentic utility weighting across privacy, urgency, and semantic clusters.
 
-## Project Objectives
+## Engineering Gap / Limitation
+
+Existing browser organization tools either rely on rigid, manual folder hierarchies that fail to adapt to dynamic workflows, or unconstrained LLMs that lack structured multi-dimensional classification (balancing project context, semantic similarity, recency, and active priority concurrently) and fail to respect local data privacy boundaries.
+
+## Initial Project Objectives
 
 * O1: To design a multi-agent tab organization architecture featuring specialized domain agents (Semantic Topic, Urgency/Recency, Project Context, and Privacy) and a central Aggregator/Planner.
 * O2: To develop the system using local vector embeddings and ranking algorithms combined with agentic workflows to generate clean, categorized workspace sessions and automated tab management actions.
