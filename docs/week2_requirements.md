@@ -3,8 +3,8 @@
 | **Problem Evidence** | Knowledge workers experience frequent attention fragmentation and severe cognitive overhead due to digital clutter and unmanaged information streams, leading to measurable losses in task efficiency (Mark et al., 2008). Additionally, CMU research highlighted that 25% of users experienced severe system performance issues or crashes due to tab hoarding, driven by the "blackhole effect"—the psychological fear of losing a thought if a tab goes out of sight (Aupperlee, 2021). |
 | **Existing Approaches** | 1\. **OneTab:** Flattens open tabs into a static list to conserve memory, but completely lacks semantic organization, automated categorization, and contextual workspace awareness. 2\. **Workona:** Provides structured manual workspace management, but imposes a heavy manual setup and maintenance burden on the user. 3\. **Chrome’s Native Tab Organizer:** Offers automated grouping via built-in LLMs, but lacks multi-dimensional priority/urgency ranking and customizable user preference constraints. |
 | **Project / Engineering Gap** | Existing browser organization tools either rely on rigid, manual folder hierarchies that fail to adapt to dynamic workflows, or unconstrained LLMs that lack structured multi-dimensional classification (balancing project context, semantic similarity, recency, and active priority concurrently) and fail to respect local data privacy boundaries. |
-| **Objective O1** | To design a multi-agent tab organization architecture featuring specialized domain agents (Semantic Topic, Urgency/Recency, Project Context, and Privacy/Security) and a central Aggregator/Planner. |
-| **Objective O2** | To develop the system using local vector embeddings and ranking algorithms combined with agentic workflows to generate clean, categorized workspace sessions and automated tab management actions. |
+| **Objective O1** | To design a tab organization architecture by categorizing tabs based on GUI interactivity based on screenshots. |
+| **Objective O2** | To extract visual website characteristics like colour, wordiness or presence of pictures in the website screenshot. |
 | **Objective O3 (if relevant)** | To evaluate the solution in terms of categorization accuracy, retrieval precision for natural language queries, system latency, and reduction in user context-switching overhead. |
 | **Intended Users** | Students, software engineers, researchers, and heavy web users who juggle multiple projects simultaneously and suffer from productivity loss due to manual tab management. |
 | **Supported Tasks** | Automated tab categorization, semantic workspace grouping, urgency/recency ranking, and automated tab management actions (such as group creation and tab suspension/hibernation with undo support). |
@@ -20,10 +20,10 @@
 
 | # | Requirement — The system SHALL | Scope Boundary — SHALL NOT (where relevant) |
 | :--- | :--- | :--- |
-| **FR1** | Capture and ingest active browser tab metadata, URLs, and contextual titles from the current browser session using extension APIs. | Intercept, log, or scrape private incognito window data or unapproved browser storage areas. |
-| **FR2** | Process local vector embeddings of tab titles and content snippets to compute semantic similarity and categorize tabs into project workspaces. | Send raw, unencrypted sensitive tab text or credentials to external third-party cloud LLM endpoints. |
-| **FR3** | Rank open tabs using a multi-dimensional scoring algorithm that evaluates semantic topic, recency, and user-defined priority weights. | Automatically close or hibernate active user tabs without providing an undo state or an opt-out buffer. |
-| **FR4** | Decline or isolate tabs containing sensitive information (e.g., banking, healthcare) when privacy guardrails or filters are triggered. | Make permanent modifications to browser bookmarks or external password vaults without explicit user confirmation. |
+| **FR1** | Extract website features such as colour and interactive icons (dropboxes, text boxes, widgets) from screenshots. | Intercept, log, or scrape private incognito window data or unapproved browser storage areas. |
+| **FR2** | Summarize websites into a few intuitive key words. | Confuse the user with verbose website properties. |
+| **FR3** | Classify the website into interactive or not interactive. | Classify the website based on prior habits. |
+| **FR4** | Decline or isolate tabs containing sensitive information (e.g., banking, healthcare) when privacy guardrails or filters are triggered. | Decline information based on keywords alone. |
 | **FR5** | Present categorized workspaces and tab organization suggestions in a clean, intuitive browser extension popup or side-panel interface. | Sort tabs without the user's agreement. |
 
 # Section 2:
