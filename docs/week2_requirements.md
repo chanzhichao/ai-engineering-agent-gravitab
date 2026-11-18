@@ -8,7 +8,7 @@
 | **Objective O3 (if relevant)** | To evaluate the solution in terms of categorization accuracy, retrieval precision for natural language queries, system latency, and reduction in user context-switching overhead. |
 | **Intended Users** | Students, software engineers, researchers, and heavy web users who juggle multiple projects simultaneously and suffer from productivity loss due to manual tab management. |
 | **Supported Tasks** | Automated tab categorization, semantic workspace grouping, urgency/recency ranking, and automated tab management actions (such as group creation and tab suspension/hibernation with undo support). |
-| **Information / Knowledge Domain** | Browser metadata (titles, URLs, session history), local content snippets/DOM text, and user-defined project taxonomies. |
+| **Information / Knowledge Domain** | Browser GUI screenshots taken by the user, local content snippets/DOM text, and user-defined project taxonomies. |
 | **Operating Context** | Client-side browser extension environment running in Chromium-based browsers via Manifest V3, utilizing local vector embeddings and lightweight asynchronous execution. |
 | **Important Constraints** | Strict local data privacy boundaries (avoiding external cloud transmission of raw sensitive page content), client-side CPU/memory resource constraints, and the requirement for user confirmation/undo states to prevent accidental tab data loss. |
 | **Explicit Out-of-Scope Tasks** | The system will not permanently store raw sensitive page contents in external cloud databases, execute destructive unconfirmed tab closures, or replace native browser bookmarking permanently without consent. |
