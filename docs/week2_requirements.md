@@ -21,11 +21,11 @@
 | # | Requirement — The system SHALL | Scope Boundary — SHALL NOT (where relevant) |
 | :--- | :--- | :--- |
 | **FR1** | Extract website features such as colour and interactive icons (dropboxes, text boxes, widgets) from screenshots. | Intercept, log, or scrape private incognito window data or unapproved browser storage areas. |
-| **FR2** | Summarize websites into a few intuitive key words. | Confuse the user with verbose website properties. |
-| **FR3** | Classify the website into interactive or not interactive. | Classify the website based on prior habits. |
-| **FR4** | Predict missing widgets (Like "log in" icon missing in a home page) that were cut off from website screenshots to improve model contextual understanding. | Contextual loss due to the model learning rigid GUI screenshot "rules" that do not reflect intuitive user website navigation. |
-| **FR5** | Decline or isolate tabs containing sensitive information (e.g., banking, healthcare) when privacy guardrails or filters are triggered. | Decline information based on keywords alone. |
-| **FR6** | Present categorized workspaces and tab organization suggestions in a clean, intuitive browser extension popup or side-panel interface. | Sort tabs without the user's agreement. |
+| **FR2** | Summarize websites into a few intuitive key words. | Display raw metadata, URL parameters, or multi-sentence descriptions in tag labels. |
+| **FR3** | Classify the website into interactive or not interactive. | Classify the website based on historical browsing habits or cross-session user tracking. |
+| **FR4** | Predict missing widgets (Like "log in" icon missing in a home page) that were cut off from website screenshots to improve model contextual understanding. | Memorizing website features rigidly without translating to intuitive website navigation. |
+| **FR5** | Decline or isolate tabs containing sensitive information (e.g., banking, healthcare) when privacy guardrails or filters are triggered. | Decline information based solely on isolated keyword matches without context. |
+| **FR6** | Present categorized and ranked workspaces and tab organization suggestions in a clean, intuitive browser extension popup or side-panel interface. | Sort tabs without the user's agreement. |
 
 # Section 2:
 ## Non-Functional Requirements — Agent Gravitab
