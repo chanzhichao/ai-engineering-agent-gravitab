@@ -1,6 +1,6 @@
-# Agent Gravitab - AI-Powered Browser Tab Sorter
+# Agent Gravitab - Browser Tab Sorter by Understanding Impulsive Tendencies from Website Screenshots
 
-> Agent Gravitab is an AI-powered browser tab finder and workspace sorter that helps knowledge workers, researchers, and students autonomously organize, categorize, and manage overwhelming browser tab clutter.
+Agent Gravitab is an AI-powered browser tab finder and workspace sorter that helps knowledge workers, researchers, and students autonomously organize, categorize, and manage overwhelming browser tab clutter. It sorts tabs by giving scores on whether the website is interactive, or easily distracts users, ideally based on screenshots alone.
 
 ## Problem Statement
 
