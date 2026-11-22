@@ -1,7 +1,7 @@
 | Checkpoint Field | Project Details (Agent Gravitab) |
 | :---- | :---- |
 | **Problem Evidence** | Knowledge workers experience frequent attention fragmentation and severe cognitive overhead due to digital clutter and unmanaged information streams, leading to measurable losses in task efficiency (Mark et al., 2008). Additionally, CMU research highlighted that 25% of users experienced severe system performance issues or crashes due to tab hoarding, driven by the "blackhole effect"—the psychological fear of losing a thought if a tab goes out of sight (Aupperlee, 2021). |
-| **Existing Approaches** | 1\. **OneTab:** Flattens open tabs into a static list to conserve memory, but completely lacks semantic organization, automated categorization, and contextual workspace awareness. 2\. **Workona:** Provides structured manual workspace management, but imposes a heavy manual setup and maintenance burden on the user. 3\. **Chrome’s Native Tab Organizer:** Offers automated grouping via built-in LLMs, but lacks multi-dimensional priority/urgency ranking and customizable user preference constraints. |
+| **Existing Approaches** | 1\. **OneTab:** Flattens open tabs into a static list to conserve memory, but completely lacks semantic organization, automated categorization, and contextual workspace awareness. 2\. **Workona:** Provides structured manual workspace management, but imposes a heavy manual setup and maintenance burden on the user. 3\. **Chrome’s Native Tab Organizer:** Offers automated grouping via built-in LLMs, but lacks multi-dimensional priority/urgency ranking and customizable user preference constraints. 4\. **Skeema:** Organises tabs based on task metadata and automatically closes unnecessary tabs, but is blind to visual UI affordances, cut-off navigation cues, and interactive widget density. |
 | **Project / Engineering Gap** | Existing browser organization tools either rely on rigid, manual folder hierarchies that fail to adapt to dynamic workflows, or unconstrained LLMs that lack structured multi-dimensional classification (balancing project context, semantic similarity, recency, and active priority concurrently) and fail to respect local data privacy boundaries. |
 | **Objective O1** | To design a tab organization architecture by categorizing tabs based on GUI interactivity based on screenshots. |
 | **Objective O2** | To extract visual website characteristics like colour, wordiness or presence of pictures in the website screenshot. |
@@ -20,12 +20,12 @@
 
 | # | Requirement — The system SHALL | Scope Boundary — SHALL NOT (where relevant) |
 | :--- | :--- | :--- |
-| **FR1** | Extract website features such as colour and interactive icons (dropboxes, text boxes, widgets) from screenshots. | Intercept, log, or scrape private incognito window data or unapproved browser storage areas. |
-| **FR2** | Summarize websites into a few intuitive key words. | Display raw metadata, URL parameters, or multi-sentence descriptions in tag labels. |
-| **FR3** | Classify the website into interactive or not interactive. | Classify the website based on historical browsing habits or cross-session user tracking. |
-| **FR4** | Predict missing widgets (Like "log in" icon missing in a home page) that were cut off from website screenshots to improve model contextual understanding. | Memorizing website features rigidly without translating to intuitive website navigation. |
-| **FR5** | Decline or isolate tabs containing sensitive information (e.g., banking, healthcare) when privacy guardrails or filters are triggered. | Decline information based solely on isolated keyword matches without context. |
-| **FR6** | Present categorized and ranked workspaces and tab organization suggestions in a clean, intuitive browser extension popup or side-panel interface. | Sort tabs without the user's agreement. |
+| **FR1** | Extract visual website features including dominant colour palettes and deduplicated interactive widgets (text boxes, dropdowns, tool buttons, navigation links) from viewport screenshots. | Intercept, log, or scrape private incognito window data or unapproved browser storage areas. |
+| **FR2** | Summarise each tab into a concise set of intuitive, human-readable keyword tags reflecting its domain and functional role. | Display raw metadata, URL parameters, or multi-sentence descriptions in tag labels. |
+| **FR3** | Classify each website's interaction profile into Productive Workspace, Reference / Navigational, or Distraction / Impulse Feed using visible widget affordances and toolbar layout geometry. | Classify websites using historical browsing habits or cross-session user tracking. |
+| **FR4** | Infer missing or viewport-cropped widgets (e.g., a scrolled-off header bar or clipped login/menu control) from surrounding layout structure to preserve contextual navigation understanding. | Rigidly memorise site-specific pixel templates that fail to generalise to unseen layouts. |
+| **FR5** | Decline or isolate tabs containing sensitive personal data (e.g., active banking accounts, patient healthcare portals) using contextual visual and origin-level guardrails. | Block or decline tabs based solely on isolated single-keyword matches without page context. |
+| **FR6** | Present categorised, productivity-ranked workspaces and tab organisation suggestions inside a clean browser extension popup or side-panel. | Automatically reorder, group, or close tabs without explicit user confirmation. |
 
 # Section 2:
 ## Non-Functional Requirements — Agent Gravitab
